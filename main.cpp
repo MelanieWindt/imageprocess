@@ -114,12 +114,12 @@ void forwardDitheing(const Image &in, Image &out) {
 void bothDitheing(const Image &in, Image &out) {
 	const int width = in.size().width();
 	const int height = in.size().height();
-	int error = 0;
 
 	const PixelPacket *inpp = in.getConstPixels(0, 0, width, height);
 	PixelPacket *outpp = out.getPixels(0, 0, width, height);
 
 	for (int y = 0; y < height; y++) {
+		int error = 0;
 		int xstart = 0;
 		int xstop = width - 1;
 		int xinc = 1;
